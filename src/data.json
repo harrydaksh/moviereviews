@@ -1,0 +1,66 @@
+{
+  "genres": [
+    "Comedy",
+    "Fantasy",
+    "Crime",
+    "Drama",
+    "Music",
+    "Adventure",
+    "History",
+    "Thriller",
+    "Animation",
+    "Family",
+    "Mystery",
+    "Biography",
+    "Action",
+    "Film-Noir",
+    "Romance",
+    "Sci-Fi",
+    "War",
+    "Western",
+    "Horror",
+    "Musical",
+    "Sport"
+  ],
+  "movies": [
+    {
+      "id": 1,
+      "title": "Beetlejuice",
+      "rent": 2.5,
+      "numberInStock": 6,
+      "genres": {
+        "name": "action"
+      }
+     },
+    {
+      "id": 2,
+      "title": "The Cotton Club",
+      "rent": 2.5,
+      "numberInStock": 6,
+      "genres": {"name": "Fantasy"}
+    },
+    {
+      "id": 3,
+      "title": "The Cotton Club",
+      "rent": 2.5,
+      "numberInStock": 6,
+      "genres": {"name": "Drama"}
+    },
+    {
+      "id": 4,
+      "title": "The Cotton Club",
+      "rent": 2.5,
+      "numberInStock": 6,
+      "genres": {"name": "Horror"}
+    },
+    {
+      "id": 5,
+      "title": "The Cotton Club",
+      "rent": 2.5,
+      "numberInStock": 6,
+      "genres": {"name": "Biography"}
+    }
+
+
+  ]
+}
