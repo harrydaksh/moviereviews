@@ -6,6 +6,9 @@ import Navbar from "./Navbar";
 import Search from "./Search";
 import Table from "./Table";
 import Pagination from "./Pagination";
+import {BrowserRouter as Router, Switch, Route, Routes} from "react-router-dom";
+import Login from "./Login";
+import User from "./User";
 
 class App extends React.Component {
     state = {
@@ -45,17 +48,31 @@ class App extends React.Component {
 
 
         return (
-            <>
-                <Navbar/>
-                <div className="row">
-                    <Filter handleFilter={this.setFilter} selectedFilter={this.state.isActive} movieData={this.state.movie}/>
-                    <div className="col-9 p-4">
-                        <Search/>
-                        <Table deletemovie={this.deleteMovie} selectedFilter={this.state.isActive} movieData={this.state.movie} />
 
-                    </div>
-                </div>
-            </ >
+            <Router>
+                <>
+
+                    <Navbar/>
+                    <Routes>
+                        <Route  path="/login" element={ <Login/>} />
+                        <Route exact path="/login/user" element={ <User/>} />
+                        <Route path="/"
+                               element={
+
+                            <div className="row">
+                                <Filter handleFilter={this.setFilter} selectedFilter={this.state.isActive} movieData={this.state.movie}/>
+                                <div className="col-9 p-4">
+                                    <Search/>
+                                    <Table deletemovie={this.deleteMovie} selectedFilter={this.state.isActive} movieData={this.state.movie} />
+
+                                </div>
+                            </div>}
+                        />
+                    </Routes>
+
+                </ >
+            </Router>
+
         );
     }
 }
