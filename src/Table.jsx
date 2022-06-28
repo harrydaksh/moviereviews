@@ -1,62 +1,63 @@
 import React from 'react';
 import Pagination from "./Pagination";
+import './Table.css'
 
 const Table = (props) => {
-  let  movieData = props.movieData
+    let movieData = props.movieData
     let filterData = props.selectedFilter
-   let filterdData =movieData.filter((el)=>{
-    if (filterData==="All")
-    {
-        return movieData
-    }
-    else if ( el.name===filterData)
-    {
-        return el
-    }
+    let filterdData = movieData.filter((el) => {
+        if (filterData === "All") {
+            return movieData
+        } else if (el.name === filterData) {
+            return el
+        }
 
-   })
+    })
+    let arrToBeUsedInTable = filterdData.slice(0, 4)
     return (
-<>
-        <table className="table mt-4">
-            <thead>
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Name</th>
-                <th scope="col">Year</th>
-                <th scope="col">pantone_value</th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-            </tr>
-            </thead>
-            <tbody>
+        <>
+            <table className="table mt-4">
+                <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Year</th>
+                    <th scope="col">pantone_value</th>
+                    <th scope="col "></th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
                 {
-                    filterdData.map((ele)=>(
+                    arrToBeUsedInTable.map((ele) => (
                         <tr key={ele.id}>
-                        <th scope="row">{ele.id}</th>
-                        <th>{ele.name}</th>
-                        <th>{ele.year}</th>
-                        <th>{ele.pantone_value}</th>
-                        <th>like</th>
-                        <th><button type="button" className="btn btn-danger">delete</button></th>
+                            <td scope="row">{ele.id}</td>
+                            <td>{ele.name}</td>
+                            <td>{ele.year}</td>
+                            <td>{ele.pantone_value}</td>
+                            <td>
+                                <span onClick={(e)=> {
+                                    if (e.currentTarget.innerText== "favorite")
+                                    {
+                                        e.currentTarget.innerText='favorite_border'
+                                    }else {
+                                        e.currentTarget.innerText="favorite"
+                                    }
+                                }
+                                }  className="material-icons-outlined pt">favorite_border</span>
+                            </td>
+                            <th>
+                                <button onClick={()=>{
+                                    props.deletemovie(ele.id)
+                                }} type="button" className="btn btn-danger">delete</button>
+                            </th>
                         </tr>
                     ))
                 }
-
-            {/*<tr>*/}
-            {/*    <th scope="row">2</th>*/}
-            {/*    <td>Jacob</td>*/}
-            {/*    <td>Thornton</td>*/}
-            {/*    <td>@fat</td>*/}
-            {/*</tr>*/}
-            {/*<tr>*/}
-            {/*    <th scope="row">3</th>*/}
-            {/*    <td colSpan="2">Larry the Bird</td>*/}
-            {/*    <td>@twitter</td>*/}
-            {/*</tr>*/}
-            </tbody>
-        </table>
-<Pagination/>
-</>
+                </tbody>
+            </table>
+            <Pagination/>
+        </>
     );
 };
 

@@ -15,7 +15,12 @@ class App extends React.Component {
     setFilter=(filter)=>{
         this.setState({isActive:filter})
     }
-
+    deleteMovie = (id) =>{
+      let filterArr =  this.state.movie.filter((el)=>{
+           return el.id != id
+       })
+        this.setState({movie:filterArr})
+    }
     componentDidMount() {
         let f = async () => {
             let result = await fetch('https://reqres.in/api/products')
@@ -46,7 +51,7 @@ class App extends React.Component {
                     <Filter handleFilter={this.setFilter} selectedFilter={this.state.isActive} movieData={this.state.movie}/>
                     <div className="col-9 p-4">
                         <Search/>
-                        <Table selectedFilter={this.state.isActive} movieData={this.state.movie} />
+                        <Table deletemovie={this.deleteMovie} selectedFilter={this.state.isActive} movieData={this.state.movie} />
 
                     </div>
                 </div>
