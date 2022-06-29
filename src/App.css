@@ -7,3 +7,50 @@
 border-radius: 10px;
     background-color: #D0F0C0;
 }
+.counter{
+    width: 20rem;
+    margin: auto;
+    padding: 4rem;
+    border: 2px solid black;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.counter h1{
+    color: white;
+}
+
+.mystyle {
+    width: 100%;
+    padding: 25px;
+    background-color: coral;
+    color: white;
+    font-size: 25px;
+    box-sizing: border-box;
+}
+/*.navbar-collapse{*/
+/*    flex-basis: 100%;*/
+/*    flex-grow: 1;*/
+/*    align-items: center;*/
+/*    position: absolute;*/
+/*    top: 55px;*/
+/*    background: #212528;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    z-index: 12;*/
+/*}*/
+/*.navbar-nav li{*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*}*/
+/*.navbar-nav li a{*/
+/*    color: white;*/
+
+/*}*/
+/*.dropdown-menu{*/
+/*    background: #212528;*/
+/*    border: 2px solid white;*/
+/*}*/

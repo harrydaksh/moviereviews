@@ -9,6 +9,8 @@ import Pagination from "./Pagination";
 import {BrowserRouter as Router, Switch, Route, Routes} from "react-router-dom";
 import Login from "./Login";
 import User from "./User";
+import Counter from "./Components/Counter";
+import Toggle from "./Components/Toggle";
 
 class App extends React.Component {
     state = {
@@ -55,7 +57,9 @@ class App extends React.Component {
                     <Navbar/>
                     <Routes>
                         <Route  path="/login" element={ <Login/>} />
+                        <Route  path="/counter" element={<Counter/>} />
                         <Route exact path="/login/user" element={ <User/>} />
+                        <Route exact path="/toggle" element={ <Toggle/>} />
                         <Route path="/"
                                element={
 
@@ -74,7 +78,7 @@ class App extends React.Component {
             </Router>
 
         );
-    }
+    };
 }
 
 export default App;

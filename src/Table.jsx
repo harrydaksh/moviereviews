@@ -66,7 +66,7 @@ class Table extends React.Component {
                     }
                     </tbody>
                 </table>
-                <Pagination activePage={this.state.currPage} numberOfpages={numberOfPages} />
+                {/*<Pagination activePage={this.state.currPage} numberOfpages={numberOfPages} />*/}
             </>
         );
     }

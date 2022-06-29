@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Pagination = (props) => {
-    console.log(props)
     let arr=[];
     for (let i=0; i<props.numberOfpages;i++)
     {
@@ -9,11 +8,11 @@ const Pagination = (props) => {
     }
     return (
         <nav className="mt-4">
-            <ul className="pagination">
+            <ul  className="pagination">
 
                 {
                     arr.map((el)=>(
-                        <li className="page-item"><a className="page-link" href="#">{`${el + 1}`}</a></li>
+                        <li className="page-item"><a  key={el.id}  className="page-link" href="#">{`${el + 1}`}</a></li>
                     ))
                 }
             </ul>
